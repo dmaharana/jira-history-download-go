@@ -1,0 +1,5 @@
+[jira]
+url = https://your-jira-instance.atlassian.net
+username = your-email@domain.com
+token = your-api-token
+jql = project = "YOUR-PROJECT" ORDER BY created DESC
