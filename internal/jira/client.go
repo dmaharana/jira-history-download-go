@@ -24,9 +24,13 @@ const (
 )
 
 func NewClient(cfg *config.Config) (*Client, error) {
-	tp := jira.BasicAuthTransport{
-		Username: cfg.Username,
-		Password: cfg.Token,
+	// tp := jira.BasicAuthTransport{
+	// 	Username: cfg.Username,
+	// 	Password: cfg.Token,
+	// }
+
+	tp := jira.BearerAuthTransport{
+		Token: cfg.Token,
 	}
 
 	client, err := jira.NewClient(tp.Client(), cfg.URL)
